@@ -8,8 +8,8 @@ import store from './database.js';
 validateEnvironment();
 
 // Import routes using ES Module syntax
-import authRoutes from './auth/routes/auth-routes.js';
-import loanRoutes from './routes/loan.js';
+import authRoutes from './auth/auth-routes.js';
+import underwriterRoutes from './routes/underwriter.js';
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(express.json());
 
 // Use the routes
 app.use('/api', authRoutes);
-app.use('/api', loanRoutes);
+app.use('/api/underwriter', underwriterRoutes);
 
 // Add a test route to verify server is working
 app.get('/test', (req, res) => {
