@@ -125,6 +125,7 @@ export const approveApplication = async (req, res) => {
 
         // Transform application data to loan format
         const loanData = {
+            userId: application.userId,
             // Application data
             applicationId: applicationId,
             borrower: {
